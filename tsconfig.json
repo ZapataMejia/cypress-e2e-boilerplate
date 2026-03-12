@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "ES2021",
+    "lib": ["ES2021", "DOM"],
+    "types": ["cypress", "node"],
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "strict": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "skipLibCheck": true,
+    "outDir": "./dist",
+    "baseUrl": ".",
+    "paths": {
+      "@pages/*": ["cypress/pages/*"],
+      "@fixtures/*": ["cypress/fixtures/*"],
+      "@support/*": ["cypress/support/*"]
+    }
+  },
+  "include": ["cypress/**/*.ts", "cypress.config.ts"],
+  "exclude": ["node_modules", "dist"]
+}

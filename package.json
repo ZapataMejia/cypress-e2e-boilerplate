@@ -1,0 +1,42 @@
+{
+  "name": "cypress-e2e-boilerplate",
+  "version": "1.0.0",
+  "description": "Enterprise-grade Cypress E2E testing boilerplate with BDD, API testing, and CI/CD",
+  "author": "QA Engineering Team",
+  "license": "MIT",
+  "scripts": {
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "cy:run:chrome": "cypress run --browser chrome",
+    "cy:run:firefox": "cypress run --browser firefox",
+    "cy:run:edge": "cypress run --browser edge",
+    "test:smoke": "cypress run --spec 'cypress/e2e/ui/login.cy.ts'",
+    "test:regression": "cypress run --spec 'cypress/e2e/ui/**/*.cy.ts'",
+    "test:bdd": "cypress run --spec 'cypress/e2e/bdd/features/**/*.feature'",
+    "test:api": "cypress run --spec 'cypress/e2e/api/**/*.cy.ts'",
+    "report": "npx mochawesome-merge mochawesome-report/*.json -o mochawesome-report/merged.json && npx marge mochawesome-report/merged.json -f report -o mochawesome-report",
+    "lint": "eslint 'cypress/**/*.{ts,js}'",
+    "format": "prettier --write 'cypress/**/*.{ts,js,json}' '*.{ts,js,json}'"
+  },
+  "dependencies": {
+    "cypress": "latest",
+    "@badeball/cypress-cucumber-preprocessor": "latest",
+    "@bahmutov/cypress-esbuild-preprocessor": "latest",
+    "cypress-mochawesome-reporter": "latest",
+    "@faker-js/faker": "latest",
+    "typescript": "latest"
+  },
+  "devDependencies": {
+    "eslint": "latest",
+    "@typescript-eslint/eslint-plugin": "latest",
+    "@typescript-eslint/parser": "latest",
+    "prettier": "latest",
+    "eslint-config-prettier": "latest",
+    "eslint-plugin-cypress": "latest"
+  },
+  "cypress-cucumber-preprocessor": {
+    "stepDefinitions": "cypress/e2e/bdd/step-definitions/**/*.steps.ts",
+    "filterSpecs": true,
+    "omitFiltered": true
+  }
+}

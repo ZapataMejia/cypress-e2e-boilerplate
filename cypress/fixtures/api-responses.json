@@ -1,0 +1,29 @@
+{
+  "getUser": {
+    "id": 1,
+    "name": "Leanne Graham",
+    "username": "Bret",
+    "email": "Sincere@april.biz",
+    "phone": "1-770-736-8031 x56442",
+    "website": "hildegard.org"
+  },
+  "createPost": {
+    "title": "E2E Test Post",
+    "body": "This post was created during automated E2E testing.",
+    "userId": 1
+  },
+  "updatePost": {
+    "id": 1,
+    "title": "Updated E2E Test Post",
+    "body": "This post was updated during automated E2E testing.",
+    "userId": 1
+  },
+  "postsList": {
+    "expectedMinLength": 100,
+    "firstPostId": 1
+  },
+  "usersList": {
+    "expectedLength": 10,
+    "firstUserId": 1
+  }
+}
